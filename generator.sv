@@ -25,7 +25,7 @@ class generator;
     repeat(drv_count) begin
       if(!trans.randomize()) $fatal("generator::trans randomization failed");
       tr=trans.do_copy();
-      gen2driv(put);
+      gen2driv.put(tr);
     end
     ->gen_ended;
   endtask
