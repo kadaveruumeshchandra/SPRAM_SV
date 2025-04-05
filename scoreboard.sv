@@ -24,7 +24,7 @@ class scoreboard;
       if(trans.me) begin
         $display("wen=0h",trans.wen);
         if(trans.wen) begin
-          mem[trans.addr=trans.wdata;
+          mem[trans.addr]=trans.wdata;
           $display("[scoreboard]\0t\tADDR=0h \tWDATA=%0h \t we=%oh", $time,trans.addr,mem[trans.addr], trans.wen);
         end
       else begin
