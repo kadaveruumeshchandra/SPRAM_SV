@@ -1,7 +1,7 @@
 //randomizes the transaction and sends the transaction to driver
 class generator;
   //take instance of transaction class
-  transaction trans,tr;
+  transaction trans;
 
   //specify number of items to generate
   int drv_count;
@@ -24,8 +24,8 @@ class generator;
   task main();
     repeat(drv_count) begin
       if(!trans.randomize()) $fatal("generator::trans randomization failed");
-      tr=trans.do_copy();
-      gen2driv.put(tr);
+      trans.do_copy();
+      gen2driv.put(trans);
     end
     ->gen_ended;
   endtask
